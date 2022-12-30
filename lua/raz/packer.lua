@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     })
 
-    use({ 
+    use({
         'catppuccin/nvim',
         as = 'catppuccin',
         config = function()
@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
         end
     })
 
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}) 
+    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use({'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
     use('tpope/vim-fugitive')
 
@@ -60,7 +60,13 @@ return require('packer').startup(function(use)
             --   If not available, we use `mini` as the fallback
             "rcarriga/nvim-notify",
         }
-    })
+     })
+
     use('nanozuki/tabby.nvim')
+
+    use({
+        'nvim-lualine/lualine.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    })
 
 end)
